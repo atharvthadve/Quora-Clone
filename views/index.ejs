@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
 </head>
 <body>
-    <h1>Quora Buddy</h1>
+    <div class="headers">
+        <h1>Quora Buddy</h1>
+        <a style="align-self:last baseline; margin-right: 2rem; font-size: x-large;" href="http://localhost:2100/posts/new"><i class="ri-upload-2-fill"></i></a>
+    </div>
     <% for(post of posts){ %>
         <div class="post">
             <div>
@@ -18,13 +25,17 @@
                 <%= post.content %>
             </p>
             </div>
-            <div>
-                <a href="http://localhost:2100/posts/<%= post.id %>">Edit</a>
+            <div class="accessibility">
+                <a href="http://localhost:2100/posts/<%= post.id %>">Details </a>
+                <form method="post" action="/posts/<%=post.id%>?_method=DELETE">
+                    <button style="cursor: pointer; border: none; background-color: transparent; font-size: larger; color: #393939;">
+                        <i class="ri-delete-bin-fill"></i>
+                    </button>
+                </form>
             </div>
         </div>
         <% } %>
         <br>
-        <a href="http://localhost:2100/posts/new">Create new post</a>
 </body>
 
 </html>

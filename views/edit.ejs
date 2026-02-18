@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <style>
+    body{
+        height: 100vh;
+    display: flex;        
+    justify-content: center;
+    align-items: center;
+    }
+
+    .editPost{
+    margin: 20px;
+    padding: 16px;
+    background: linear-gradient(rgb(244, 243, 243), rgba(212, 212, 250, 0.764));
+    border-radius: 1.3rem 1.3rem 0rem 1.3rem;
+    border: 3px solid;
+    display: flex;
+    flex-direction: column;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="editPost">
+        <h4 style="margin-bottom: 0px;">ID: <%= post.id %>
+        </h4>
+        <h4>Username: <i><%= post.username %></i>
+        </h4>
+            <b>Edit Content:</b>
+        <form method="post" action="/posts/<%=post.id%>?_method=PATCH">
+            <textarea cols="70" rows="4" name="content"><%=post.content%></textarea>
+            <br>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+
+</html>
