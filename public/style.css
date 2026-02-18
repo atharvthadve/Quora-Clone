@@ -1,0 +1,14 @@
+h1{
+    color: maroon;
+}
+
+.post{
+    margin: 20px;
+    padding: 16px;
+    background: linear-gradient(rgb(244, 243, 243), rgba(212, 212, 250, 0.764));
+    border-radius: 1.3rem 1.3rem 0rem 1.3rem;
+    border: 3px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
